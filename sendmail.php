@@ -6,6 +6,7 @@ use PHPMailer\PHPMailer\SMTP;
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
+include 'secure.php';
 
 function sendmail()
 {
@@ -17,15 +18,15 @@ function sendmail()
         $mail->Host = 'smtp.gmail.com'; //Set the SMTP server to send through
         $mail->SMTPAuth = true; //Enable SMTP authentication
         $mail->Username = 'nsushant21@tbc.edu.np'; //SMTP username
-        $mail->Password = 'Adrastea@09'; //SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; //Enable implicit TLS encryption
+        $mail->Password = ''; //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //Enable implicit TLS encryption
         //465 for SSL and 587 for TLS
-        $mail->Port = 587; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('nsushant21@tbc.edu.np', 'Freeman Urban Store');
         // $mail->addAddress('joe@example.net', 'Joe User'); //Add a recipient
-        $mail->addAddress('nsushant09@gmail.com'); //Name is optional
+        $mail->addAddress('sujitgyawali59@gmail.com'); //Name is optional
         // $mail->addReplyTo('info@example.com', 'Information');
         // $mail->addCC('cc@example.com');
         // $mail->addBCC('bcc@example.com');
