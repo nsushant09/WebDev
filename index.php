@@ -50,6 +50,9 @@ include('functions.php');
     <form action="sendmail.php" method="POST">
         <button type="submit" name="btnSubmit">Submit [Don't Press]</button>
     </form>
+    <form action="sendobject.php" method="POST">
+        <button type="submit" name="sendObj">Send Object</button>
+    </form>
 </body>
 
 </html>
